@@ -43,3 +43,7 @@ dotnet publish src/MediaDashboard -c Release -o publish
 - `src/MediaDashboard.Core` — домен без зависимостей от Windows: Расположение, операции Черновика, Пресеты, настройки. Покрыт тестами.
 - `src/MediaDashboard.Platform` — Win32/COM: CCD API для дисплеев, Core Audio + `IPolicyConfig` для звука, автозапуск.
 - `src/MediaDashboard` — WPF-интерфейс и иконка в трее.
+
+## Лицензия
+
+[MIT](LICENSE)
