@@ -13,6 +13,9 @@
     <AssemblyName>MediaDashboard</AssemblyName>
     <RootNamespace>MediaDashboard</RootNamespace>
     <Version>1.0.0</Version>
+    <Product>Media Dashboard</Product>
+    <!-- Required by the .NET Library License for redistributed runtime binaries; shown in the exe's file properties. -->
+    <Copyright>Copyright (c) 2026 Ramazan Yapparov</Copyright>
 
     <!-- Single self-contained exe (decision Q27). -->
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
@@ -31,6 +34,12 @@
   <ItemGroup>
     <ProjectReference Include="..\MediaDashboard.Core\MediaDashboard.Core.csproj" />
     <ProjectReference Include="..\MediaDashboard.Platform\MediaDashboard.Platform.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Ship the license texts next to the exe; kept out of the single-file bundle so users can read them. -->
+    <None Include="..\..\LICENSE" Link="LICENSE" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <None Include="..\..\THIRD-PARTY-NOTICES.md" Link="THIRD-PARTY-NOTICES.md" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>
 
 </Project>

@@ -36,7 +36,7 @@ dotnet test tests/MediaDashboard.Core.Tests
 dotnet publish src/MediaDashboard -c Release -o publish
 ```
 
-Результат — один самодостаточный `publish/MediaDashboard.exe`. Автозапуск записывает в `HKCU\...\Run` путь к exe, из которого включён. Если перенесли exe, включите автозапуск заново в меню трея.
+Результат — самодостаточный `publish/MediaDashboard.exe`, рядом с ним `LICENSE` и `THIRD-PARTY-NOTICES.md`. Для релиза упакуйте все три файла (`.pdb` не нужны). Автозапуск записывает в `HKCU\...\Run` путь к exe, из которого включён. Если перенесли exe, включите автозапуск заново в меню трея.
 
 ## Устройство
 
@@ -46,4 +46,4 @@ dotnet publish src/MediaDashboard -c Release -o publish
 
 ## Лицензия
 
-[MIT](LICENSE)
+[MIT](LICENSE). Готовый exe содержит компоненты .NET и Windows SDK под их собственными лицензиями: см. [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
