@@ -27,19 +27,6 @@ Notices for third-party code incorporated into .NET itself:
 - <https://github.com/dotnet/wpf/blob/main/THIRD-PARTY-NOTICES.TXT>
 - <https://github.com/dotnet/winforms/blob/main/THIRD-PARTY-NOTICES.TXT>
 
-## Windows SDK projection for .NET
-
-**Component**: `Microsoft.Windows.SDK.NET.dll` (package `Microsoft.Windows.SDK.NET.Ref`)
-
-Licensed under the [Windows SDK License](https://aka.ms/WinSDKLicenseURL).
-
-## C#/WinRT runtime
-
-**Component**: `WinRT.Runtime.dll`
-**Source**: <https://github.com/microsoft/CsWinRT>
-
-Licensed under the [MIT License](https://github.com/microsoft/CsWinRT/blob/master/LICENSE).
-
 ## Not distributed
 
 The *Segoe Fluent Icons* font used for icons is loaded from the Windows installation at

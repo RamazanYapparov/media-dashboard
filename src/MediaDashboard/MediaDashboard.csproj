@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows10.0.22621.0</TargetFramework>
-    <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
+    <!-- Plain net10.0-windows: a versioned TFM pulls in the 25 MB Windows SDK projection (Microsoft.Windows.SDK.NET.dll). -->
+    <TargetFramework>net10.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
@@ -22,7 +22,8 @@
     <SelfContained>true</SelfContained>
     <PublishSingleFile>true</PublishSingleFile>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
-    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <!-- No EnableCompressionInSingleFile: it saves disk only (the release zip is the same ~66 MB) but
+         decompresses assemblies into private memory: 119 MB vs 41 MB private working set, slower start. -->
   </PropertyGroup>
 
   <ItemGroup>
