@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MediaDashboard.Core/MediaDashboard.Core.csproj" />
+    <Project Path="src/MediaDashboard.Platform/MediaDashboard.Platform.csproj" />
+    <Project Path="src/MediaDashboard/MediaDashboard.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MediaDashboard.Core.Tests/MediaDashboard.Core.Tests.csproj" />
+  </Folder>
+</Solution>
