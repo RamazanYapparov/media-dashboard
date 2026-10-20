@@ -1,0 +1,53 @@
+<Window x:Class="MediaDashboard.FlyoutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MediaDashboard"
+        Title="Media Dashboard"
+        Width="420" SizeToContent="Height"
+        WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True"
+        Background="Transparent"
+        FontFamily="{StaticResource UiFont}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" CaptionHeight="0" ResizeBorderThickness="0" UseAeroCaptionButtons="False" />
+    </WindowChrome.WindowChrome>
+
+    <StackPanel Margin="16,14,16,16">
+        <!-- Displays -->
+        <DockPanel>
+            <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Click="OnIdentify"
+                    Content="{Binding [Identify], Source={x:Static local:Loc.Instance}}" />
+            <TextBlock Style="{StaticResource SectionHeader}" Text="{Binding [Displays], Source={x:Static local:Loc.Instance}}" />
+        </DockPanel>
+        <local:DisplayMap x:Name="Map" Width="388" Margin="0,8,0,0" />
+
+        <StackPanel x:Name="DraftBar" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,4,0,0" Visibility="Collapsed">
+            <Button Style="{StaticResource FlatButton}" Click="OnCancelDraft" Margin="0,0,8,0"
+                    Content="{Binding [Cancel], Source={x:Static local:Loc.Instance}}" />
+            <Button Style="{StaticResource FlatButton}" Tag="Accent" Click="OnApplyDraft" IsDefault="True"
+                    Content="{Binding [Apply], Source={x:Static local:Loc.Instance}}" />
+        </StackPanel>
+
+        <Rectangle Height="1" Fill="{DynamicResource Divider}" Margin="0,12" />
+
+        <!-- Sound -->
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{Binding [Sound], Source={x:Static local:Loc.Instance}}" />
+        <WrapPanel x:Name="AudioPanel" Margin="0,8,0,0" />
+        <Button x:Name="HiddenToggle" Style="{StaticResource LinkButton}" Click="OnToggleHidden" HorizontalAlignment="Left" Margin="0,2,0,0" />
+
+        <Rectangle Height="1" Fill="{DynamicResource Divider}" Margin="0,12" />
+
+        <!-- Presets -->
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{Binding [Presets], Source={x:Static local:Loc.Instance}}" />
+        <StackPanel x:Name="PresetPanel" Margin="0,8,0,0" />
+        <Button x:Name="SavePresetButton" Style="{StaticResource LinkButton}" Click="OnSavePreset" HorizontalAlignment="Left" Margin="0,6,0,0" />
+
+        <!-- Inline name editor shared by displays, audio outputs and presets (no dialogs: they would close the flyout). -->
+        <DockPanel x:Name="EditorBar" Margin="0,12,0,0" Visibility="Collapsed">
+            <TextBlock x:Name="EditorPrompt" Style="{StaticResource Body}" VerticalAlignment="Center" Margin="0,0,8,0" />
+            <TextBox x:Name="EditorBox" KeyDown="OnEditorKeyDown" />
+        </DockPanel>
+
+        <TextBlock x:Name="NoticeText" Foreground="{DynamicResource Warning}" FontSize="12" TextWrapping="Wrap"
+                   Margin="0,10,0,0" Visibility="Collapsed" />
+    </StackPanel>
+</Window>
